@@ -1,0 +1,94 @@
+# This file created by conda-build 24.9.0
+# meta.yaml template originally from:
+# C:\b\abs_816hr2khp1\clone\recipe, last modified Fri Nov  8 09:37:17 2024
+# ------------------------------------------------
+
+package:
+  name: bottleneck
+  version: 1.4.2
+source:
+  sha256: fa8e8e1799dea5483ce6669462660f9d9a95649f6f98a80d315b84ec89f449f4
+  url: https://pypi.io/packages/source/b/bottleneck/bottleneck-1.4.2.tar.gz
+build:
+  number: '0'
+  script: C:\\b\\abs_816hr2khp1\\croot\\bottleneck_1731058648110\\_h_env\\python.exe
+    -m pip install . -vv --no-deps --no-build-isolation
+  string: py311h57dcf0c_0
+requirements:
+  build:
+    - vs2019_win-64 19.29.30154 h96f319f_5
+    - vswhere 2.8.4 haa95532_0
+  host:
+    - blas 1.0 mkl
+    - bzip2 1.0.8 h2bbff1b_6
+    - ca-certificates 2024.9.24 haa95532_0
+    - intel-openmp 2023.1.0 h59b6b97_46320
+    - libffi 3.4.4 hd77b12b_1
+    - mkl 2023.1.0 h6b88ed4_46358
+    - mkl-service 2.4.0 py311h2bbff1b_1
+    - mkl_fft 1.3.11 py311h827c3e9_0
+    - mkl_random 1.2.8 py311hea22821_0
+    - numpy 2.1.3 py311hdab7c0b_0
+    - numpy-base 2.1.3 py311hd01c5d8_0
+    - openssl 3.0.15 h827c3e9_0
+    - pip 24.2 py311haa95532_0
+    - python 3.11.10 h4607a30_0
+    - setuptools 72.1.0 py311haa95532_0
+    - sqlite 3.45.3 h2bbff1b_0
+    - tbb 2021.8.0 h59b6b97_0
+    - tk 8.6.14 h0416ee5_0
+    - tzdata 2024b h04d1e81_0
+    - vc 14.40 h2eaa2aa_1
+    - versioneer 0.29 py311haa95532_0
+    - vs2015_runtime 14.40.33807 h98bb1dd_1
+    - wheel 0.44.0 py311haa95532_0
+    - xz 5.4.6 h8cc25b3_1
+    - zlib 1.2.13 h8cc25b3_1
+  run:
+    - numpy >=1.21,<3
+    - python >=3.11,<3.12.0a0
+    - vc >=14.2,<15.0a0
+    - vs2015_runtime >=14.29.30133,<15.0a0
+test:
+  commands:
+    - pip check
+    - python -c "import bottleneck; bottleneck.test()"
+  imports:
+    - bottleneck
+    - bottleneck.move
+    - bottleneck.nonreduce
+    - bottleneck.nonreduce_axis
+    - bottleneck.reduce
+    - bottleneck.slow
+    - bottleneck.tests
+  requires:
+    - pip
+    - pytest
+about:
+  description: 'Bottleneck is a collection of fast NumPy array functions written in
+
+    Cython.
+
+    '
+  dev_url: https://github.com/pydata/bottleneck
+  doc_url: https://bottleneck.readthedocs.io
+  home: https://github.com/pydata/bottleneck
+  license: BSD-2-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: Fast NumPy array functions written in Cython.
+extra:
+  copy_test_source_files: true
+  final: true
+  flow_run_id: 81da8e54-c53d-4b57-ab26-c83f4a61ea8a
+  recipe-maintainers:
+    - jakirkham
+    - msarahan
+    - ocefpaf
+    - qwhelan
+    - wesm
+  remote_url: git@github.com:AnacondaRecipes/bottleneck-feedstock.git
+  sha: d3da885fd4855b82d53ee358040ca544a23f051f
+  skip-lints:
+    - host_section_needs_exact_pinnings
+    - invalid_url
